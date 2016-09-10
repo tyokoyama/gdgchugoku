@@ -15,7 +15,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	c1 := multi("multi(1)")
-    c2 := multi("multi(2)")
+	c2 := multi("multi(2)")
 	for i := 0; i < 5; i++ {
 		fmt.Printf("Response(1): %v\n", <-c1)
 		fmt.Printf("Response(2): %v\n", <-c2)
@@ -24,7 +24,7 @@ func main() {
 }
 
 func multi(st string) <-chan string {
-    fmt.Printf("multi is called.\n")
+	fmt.Printf("multi is called.\n")
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
@@ -32,6 +32,6 @@ func multi(st string) <-chan string {
 			time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
 		}
 	}()
-    fmt.Printf("return\n")
+	fmt.Printf("return\n")
 	return c
 }

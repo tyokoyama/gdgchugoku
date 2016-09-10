@@ -7,8 +7,8 @@ import (
 )
 
 /*
-    呼び出し側から終了させるためのchannelを渡し、
-    呼び出し側が終了するときにchannelに値を送信する。
+   呼び出し側から終了させるためのchannelを渡し、
+   呼び出し側が終了するときにchannelに値を送信する。
 */
 func main() {
 	rand.Seed(time.Now().UnixNano())
@@ -26,7 +26,7 @@ func main() {
 func multi(st string, quit <-chan bool) <-chan string {
 	c := make(chan string)
 	go func() {
-		for i := 0; ;i++ {
+		for i := 0; ; i++ {
 			select {
 			case c <- fmt.Sprintf("%s %d", st, i):
 			case <-quit:

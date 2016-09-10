@@ -22,7 +22,7 @@ func main() {
 }
 
 func multi(st string) <-chan string {
-    fmt.Printf("multi is called.\n")
+	fmt.Printf("multi is called.\n")
 	c := make(chan string)
 	go func() {
 		for i := 0; ; i++ {
@@ -30,6 +30,6 @@ func multi(st string) <-chan string {
 			time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
 		}
 	}()
-    fmt.Printf("return\n")
+	fmt.Printf("return\n")
 	return c
 }
