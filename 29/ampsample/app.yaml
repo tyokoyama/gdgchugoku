@@ -1,0 +1,31 @@
+runtime: go
+api_version: go1
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+  secure: always
+
+- url: /image
+  static_dir: image
+  secure: always
+
+- url: /amp-app/(.*)
+  static_files: amp-app/\1
+  upload: amp-app/(.*)
+  secure: always
+
+- url: /app/(.*)
+  static_files: app/\1
+  upload: app/(.*)
+  secure: always
+
+- url: /service-worker.js
+  static_files: service-worker.js
+  upload: service-worker.js
+  mime_type: application/javascript
+  secure: always
+
+- url: /.*
+  script: _go_app
+  secure: always

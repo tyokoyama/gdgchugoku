@@ -1,0 +1,12 @@
+{
+  "lang": "ja",
+  "name": "GDGChugoku29",
+  "short_name": "GDGChu5929",
+  "icons": [{
+        "src": "images/icons/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }],
+  "start_url": "/app/pwacodelab/index.html",
+  "display": "standalone"
+}
